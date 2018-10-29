@@ -25,7 +25,11 @@ public class ProfileController {
 		String firstName = linkedin.profileOperations().getUserProfile()
 			.getFirstName();
 
-		model.addAttribute("name", firstName);
+		String lastName = linkedin.profileOperations().getUserProfile().getLastName();
+		
+		model.addAttribute("firstName", firstName);
+		model.addAttribute("lastName", lastName);
+
 
 		return "profile";
 	}
